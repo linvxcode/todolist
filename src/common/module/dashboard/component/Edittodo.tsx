@@ -28,7 +28,7 @@ const Edittodo = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [items, setItems] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const { name } = useParams();
+  const {id} = useParams();
   const firestore = getFirestore(app);
 
   const fetchTasks = async () => {
@@ -38,7 +38,7 @@ const Edittodo = () => {
         id: doc.id,
         ...doc.data(),
       }));
-      const datas = tasksData?.find((item: any) => item.name === name);
+      const datas = tasksData?.find((item: any) => item.id === id);
       if (datas) {
         setItems(datas);
         setLoading(false);

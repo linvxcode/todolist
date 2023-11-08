@@ -67,7 +67,7 @@ const TablePage = ({ tasks, handleDeleteTask }: any) => {
               } else if (columnKey === "role") {
                 return (
                   <TableCell>
-                    <Link href={`/dashboard/${item.name}`}>
+                    <Link href={`/dashboard/${item.id}`}>
                       <button
                         className="bg-yellow-500 text-white p-2 rounded-lg ml-2"
                       >
